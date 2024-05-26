@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Miner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="img/trx.png" class="fan-image" alt="Fan" onclick="clickCircle()">
+        <p class="balance"><span id="balance">0.000000</span> TRX</p>
+        <p class="mining-speed"><span id="miningSpeed">1.0</span> GH/s ⚡</p>
+        <div class="buttons">
+            <button class="button" id="claimButton" onclick="claimCoins()" disabled>Claim</button>
+            <button class="button" onclick="openBoost()">Boost</button>
+        </div>
+    </div>
+
+    <div class="modal" id="wallet">
+        <div class="modal-content">
+            <button class="close" onclick="closeWallet()">X</button>
+            <h2>Wallet</h2>
+            <p>Available Balance: <span id="walletBalance">0.000000</span> coins</p>
+        </div>
+    </div>
+
+    <div class="modal" id="boost">
+        <div class="modal-content">
+            <button class="close" onclick="closeBoost()">X</button>
+            <h2>Boost Mining Speed</h2>
+            <p>Boost will give you the ability to earn 5.18% faster per day and 155% faster in 30 days</p>
+            <p>Select amount to pay:</p>
+            <button class="button" onclick="setBoostAmount(100)">100 TRX - 10 GH/s</button>
+            <input type="number" id="customAmount" placeholder="Enter custom amount">
+            <button class="button" onclick="setCustomBoost()">Set Custom Boost</button>
+            <p id="boostInfo"></p>
+            <button class="button" onclick="openPayment()">Buy</button>
+            <button class="button" onclick="closeBoost()">Back</button>
+        </div>
+    </div>
+
+    <div class="modal" id="payment">
+        <div class="modal-content">
+            <button class="close" onclick="closePayment()">X</button>
+            <h2>Send TRX to this address:</h2>
+            <p id="walletAddress">TD5h5iM35J8EPZCf7YbTz31B3ozFtFKKx8</p>
+            <img id="qrCode" src="img/qr.jpg" alt="QR Code">
+            <button class="button" onclick="closePayment()">Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
